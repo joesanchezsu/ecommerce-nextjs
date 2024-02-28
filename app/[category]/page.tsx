@@ -19,6 +19,10 @@ async function getData(categoryName: string) {
   return data;
 }
 
+// Opt out of caching for all data requests in the route segment
+// This will allow to update data on the production site in case Sanity has changed
+export const dynamic = "force-dynamic";
+
 export default async function CategoryPage({
   params,
 }: {
